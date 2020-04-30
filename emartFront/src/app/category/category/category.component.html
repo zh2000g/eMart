@@ -1,0 +1,40 @@
+<hr>
+<div class="container">
+    <div class="row">
+      <div class="col-md-2 offset-6" align="center">
+          <a routerLink="/history">Purchase History</a>
+      </div>
+      <div class="col-md-1">
+        <b>Category</b>
+      </div>
+      <div class="col-md-1">
+        <a routerLink="/searchList">Search</a>
+      </div>
+      <div class="col-md-1">
+        <a routerLink="/cart">Cart</a>
+      </div>
+      <div class="col-md-1">
+        <a routerLink="/logout">LogOut</a>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-2">
+            <p>Category</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-2">
+          <div class="row">
+            <div class="col-md-2" *ngFor="let item of category_list">
+              <p>
+                  <a href="#" (click)=categoryClick(item.category_id)>{{item.category_name}}</a>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<div *ngIf="category_id!=''">
+    <app-subcategory [parent_category_id]=category_id></app-subcategory>
+</div>

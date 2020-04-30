@@ -1,0 +1,19 @@
+<div class="container">
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Sub Category of  {{parent_catetory_name}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-10 offset-2">
+            <div class="row">
+                <div class="col-md-2" *ngFor="let item of category_list">
+                    <p>
+                        <a href="#" routerLink="/searchList">{{item.category_name}}</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

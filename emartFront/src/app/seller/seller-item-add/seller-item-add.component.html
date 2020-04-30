@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            <p>Seller Manager >> Item In Stock >> Add Item</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 offset-2">
+            <table border="0">
+                <tr class="item">
+                    <td>Category</td>
+                    <td>
+                        <select name="category" style="width:210px">
+                            <option value=""></option>
+                            <option value="1">Computer</option>
+                            <option id="2">Books</option>
+                            <option id="3">Clothes</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="item">
+                    <td>SubCategory</td>
+                    <td>
+                        <select name="subcategory" style="width:210px">
+                            <option value=""></option>
+                            <option value="1">Note PC</option>
+                            <option id="2">Tablet</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr class="item">
+                    <td width="150">Item Name</td>
+                    <td><input type="text" name="item_name"></td>
+                </tr>
+                <tr class="item">
+                    <td>Price</td>
+                    <td><input type="text" name="price"></td>
+                </tr>
+                <tr class="item">
+                    <td>Remainning</td>
+                    <td><input type="text" name="remainning"></td>
+                </tr>
+                <tr class="item">
+                    <td valign="top">Item Description</td>
+                    <td>
+                        <textarea name="item_desc" id="" cols="22" rows="5"></textarea>
+                    </td>
+                </tr>
+                <tr class="item">
+                    <td>Item Image Upload</td>
+                    <td></td>
+                </tr>
+                <tr class="item">
+                    <td align="center">Image 1</td>
+                    <td><input type="file" name="image1"></td>
+                </tr>
+                <tr class="item">
+                    <td align="center">Image 2</td>
+                    <td><input type="file" name="image2"></td>
+                </tr>
+                <tr class="item">
+                    <td align="center">Image 3</td>
+                    <td><input type="file" name="image3"></td>
+                </tr>
+                <tr class="item">
+                    <td align="center">Image 4</td>
+                    <td><input type="file" name="image4"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-2 offset-3" align="right">
+            <input type="button" name="submit" value="Add Item" routerLink="/seller/sellerItemList">
+        </div>
+        <div class="col-md-1">
+            <input type="reset" name="reset" value="Reset">
+        </div>
+    </div>
+</div>

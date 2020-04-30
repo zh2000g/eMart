@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-4">
+          <p>Seller Manager >> Edit Profile</p>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-2">
+            <input type="hidden" name="user_kind" value="1">
+            <table border="0">
+                <tr class="edit">
+                    <td class="item">User Id</td>
+                    <td>
+                        <span>{{seller.user_id}}</span>
+                        <input type="hidden" name="user_id" [(ngModel)]="seller.user_id">
+                    </td>
+                </tr>
+                <tr class="edit">
+                    <td>User Name</td>
+                    <td><input type="text" name="user_name" [(ngModel)]="seller.user_name"></td>
+                </tr>
+                <tr class="edit">
+                    <td>Password</td>
+                    <td><input type="password" name="password" [(ngModel)]="seller.password"></td>
+                </tr>
+                <tr class="edit">
+                    <td>Confirm Password</td>
+                    <td><input type="password" name="confirm_password" [(ngModel)]="seller.confirm_password"></td>
+                </tr>
+                <tr class="edit">
+                    <td>Company Name</td>
+                    <td><input type="text" name="company_name" [(ngModel)]="seller.company_name"></td>
+                </tr>
+                <tr class="edit">
+                    <td valign="top">Brief of Company</td>
+                    <td><textarea  name="brief_of_company" [(ngModel)]="seller.brief_of_company" cols="22" rows="3"></textarea></td>
+                </tr>
+                <tr class="edit">
+                    <td>GSTIN</td>
+                    <td><input type="text" name="gstin" [(ngModel)]="seller.gstin"></td>
+                </tr>
+                <tr class="edit">
+                    <td>Post Address</td>
+                    <td><input type="text" name="post_address" [(ngModel)]="seller.post_address"></td>
+                </tr>
+                <tr class="edit">
+                    <td>Website</td>
+                    <td><input type="text" name="website" [(ngModel)]="seller.website"></td>
+                </tr>
+                <tr class="edit">
+                    <td>Email</td>
+                    <td><input type="text" name="email" [(ngModel)]="seller.email"></td>
+                </tr>
+                <tr class="edit">
+                    <td>Contract Number</td>
+                    <td><input type="text" name="contract_number" [(ngModel)]="seller.contract_number"></td>
+                </tr>
+                <tr class="edit">
+                    <td></td>
+                    <td>
+                        <input type="button" name="submit" value="Edit Profile" routerLink="/seller">
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="reset" name="reset" value="reset">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>    
+</div>

@@ -1,0 +1,78 @@
+<hr>
+<div class="container">
+    <div class="row">
+      <div class="col-md-2 offset-6" align="center">
+          <a routerLink="/history">Purchase History</a>
+        </div>
+      <div class="col-md-1">
+        <a routerLink="/category">Category</a>
+        </div>
+      <div class="col-md-1">
+          <b>Search</b>
+        </div>
+      <div class="col-md-1">
+        <a routerLink="/cart">Cart</a>
+      </div>
+      <div class="col-md-1">
+        <a routerLink="/logout">LogOut</a>
+      </div>
+    </div>
+    <hr>
+    <p align="center"><b>Item Detail</b></p>
+    <div class="row">
+        <div class="col-md-2 offset-2" align="center">
+            <img src="../../assets/images/thinkpad.jpg" class="image">
+            <br>
+            <a routerLink="/itemDetail">1</a> &ngsp;
+            <a routerLink="/itemDetail">2</a> &ngsp;
+            <a routerLink="/itemDetail">3</a> &ngsp;
+            <a routerLink="/itemDetail">4</a> &ngsp;
+        </div>
+        <div class="col-md-6">
+            <table border="0" width="600">
+                <tr>
+                    <td width="150">Item Name</td>
+                    <td>Thinkpad</td>
+                </tr>
+                <tr>
+                    <td>Category</td>
+                    <td>Computer</td>
+                </tr>
+                <tr>
+                    <td>SubCategory</td>
+                    <td>Note PC</td>
+                </tr>
+                <tr>
+                    <td>Price</td>
+                    <td>$4,999</td>
+                </tr>
+                <tr>
+                    <td>Remainning</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td valign="top">Item Description</td>
+                    <td>
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
+                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Buy Number</td>
+                    <td>
+                        <input type="number"  min="0" max="100" style="width:50px"/>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 offset-9" align="center">
+            <input type="button" name="submit" value="Add to Cart">
+        </div>
+        <div class="col-md-1">
+            <input type="button" name="submit" value="Return" onclick="history.back()">
+        </div>
+    </div>
+</div>

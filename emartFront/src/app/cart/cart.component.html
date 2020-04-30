@@ -1,0 +1,89 @@
+<hr>
+<div class="container">
+    <div class="row">
+      <div class="col-md-2 offset-6" align="center">
+        <a routerLink="/history">Purchase History</a>
+      </div>
+      <div class="col-md-1">
+        <a routerLink="/category">Category</a>
+      </div>
+      <div class="col-md-1">
+        <a routerLink="/searchList">Search</a>
+      </div>
+      <div class="col-md-1">
+        <b>Cart</b>
+      </div>
+      <div class="col-md-1">
+        <a routerLink="/logout">LogOut</a>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-4 offset-8" align="center">
+            <p>
+                Sort By &nbsp;&nbsp;
+                [<a routerLink="/history">Seller</a>] &nbsp;
+                [<a routerLink="/history">Price</a>] &nbsp;
+                [<a routerLink="/history">Purchase Time</a>]
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table table-striped table-bordered table-hover">
+            <thead class="thead-light">
+                <tr class="th">
+                    <th></th>
+                    <th>Item name</th>
+                    <th>Category</th>
+                    <th>Sub Category</th>
+                    <th>Seller</th>
+                    <th>Price</th>
+                    <th>Number</th>
+                    <th>Purchase Time</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of cur_page_item_list;let lx=index">
+                    <td align="center">
+                        <a routerLink="/itemDetail">
+                            <img src="{{item.image_url_1}}" class="image">
+                        </a>
+                    </td>
+                    <td>{{item.item_name}}</td>
+                    <td>{{item.category}}</td>
+                    <td>{{item.sub_category}}</td>
+                    <td>{{item.seller}}</td>
+                    <td align="right">{{item.price}}</td>
+                    <td align="right">{{item.current_num}}</td>
+                    <td>{{item.purchase_time}}</td>
+                    <td align="center">
+                        <input type="button" name="edit" value="Edit" class="edit" routerLink="/itemDetail"> &nbsp;
+                        <input type="button" name="delete" value="Delete" class="delete"> &nbsp;
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-md-5 offset-5">
+            <span>
+                <a href="#" (click)=pageChange(1)><<</a>&nbsp;
+            </span>
+            <span *ngFor="let page of page_list">
+                <a href="#" (click)=pageChange(page) >{{page}}</a>&nbsp;
+            </span>
+            <span>
+                <a href="#" (click)=pageChange(page_list.length)>>></a>
+            </span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 offset-8">
+            Total Price:$15,789
+        </div>
+        <div class="col-md-2">
+            <input type="button" name="payment" value="Go To Payment" routerLink="/payment" >
+        </div>
+    </div>
+</div>

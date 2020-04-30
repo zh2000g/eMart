@@ -1,0 +1,24 @@
+<hr>
+<p align="center"><b>Sign Up</b></p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-2 offset-4" align="right" style="height:40px">
+            <input type="radio" name="user_kind" value="1" [(ngModel)]="user_kind" checked>
+            I am a Buyer 
+        </div>
+        <div class="col-md-2">
+            <input type="radio" name="user_kind" value="2" [(ngModel)]="user_kind">
+            I am a Seller
+        </div>
+    </div>
+    <div class="row">
+        <div [ngSwitch]=user_kind class="col-md-8 offset-4">
+            <div *ngSwitchCase="1"><app-signup-buyer></app-signup-buyer></div>
+            <div *ngSwitchCase="2"><app-signup-seller></app-signup-seller></div>
+        </div>
+    </div>
+</div>
+
+
+
+

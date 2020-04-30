@@ -1,0 +1,55 @@
+<hr>
+<div class="container">
+    <div class="row" style="position:relative;top:90px;">
+      <div class="col-md-6 offset-4">
+        <form name="angularForm" novalidate method="post">
+            <table>
+                <tr height="50">
+                    <td>User Id</td>
+                    <td>
+                        <input type="text" placeholder="Please input" name="userid" class="user" [(ngModel)]="user_id"
+                            onfocus="this.placeholder=''" onblur="this.placeholder='Please input'">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr height="50">
+                    <td width="100">Password</td>
+                    <td>
+                        <input type="password" placeholder="Please input" name="password" class="pass" [(ngModel)]="password"
+                            onfocus="this.placeholder=''" onblur="this.placeholder='Please input'">
+                    </td>
+                    <td></td>
+                </tr>
+                <tr height="50">
+                    <td></td>
+                    <td colspan=2>
+                        <span>
+                            <input type="radio" name="user_kind" value="1" [(ngModel)]="user_kind" checked>
+                            Login as Buyer 
+                        </span>
+                        &nbsp;&nbsp;
+                        <span>
+                            <input type="radio" name="user_kind" value="2" [(ngModel)]="user_kind">
+                            Login as Seller
+                        </span>
+                    </td>
+                </tr>
+                <tr height="50">
+                    <td></td>
+                    <td align="right">
+                        <input type="button" name="submit" value="Login" (click)=login()>
+                        &nbsp;&nbsp;&nbsp;
+                        <input type="reset" name="reset" value="Reset">
+                    </td>
+                    <td width="100" align="right">
+                        <a href="#" routerLink="/signup">SignUp</a>
+                    </td>
+                </tr>
+                <tr height="200"></tr>
+            </table>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
