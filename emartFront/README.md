@@ -1,10 +1,15 @@
-# EmartFront
+# eMartFront
 
 Angular Application for 2020 Stackathon.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+## Login page control
+
+In Login page, when radio [Login as Buyer] is checked, [login] button navigate to buyer pages.
+When radio [Login as Seller] is checked, [login] button navigate to seller pages.
 
 ## Project directory
 
