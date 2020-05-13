@@ -1,9 +1,3 @@
-# This repository is project for 2020 Stackathon.
-
-# eMartFront
-
-Angular Application
-
 # emartBackend
 
 Java Backend Application
