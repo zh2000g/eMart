@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router';
 
 import { Item } from '../../class/item';
 import { ItemService } from '../../service/item.service';
@@ -12,26 +13,28 @@ export class SellerItemListComponent implements OnInit {
 
   COUNT_PER_PAGE:number = 5;
 
-  login_user_id:string;
+  user_id:string;
 
   item_list:Item[];
   cur_page_item_list:Item[] = [];
   page_list:number[] = [];
 
-  constructor(private itemService: ItemService) { }
+  constructor(private itemService: ItemService, private router: Router) { }
 
   ngOnInit(): void {
-    this.login_user_id = sessionStorage.getItem("login_user_id");
+    this.user_id = sessionStorage.getItem("login_user_id");
 
-    this.item_list = this.itemService.getStockItemList(this.login_user_id);
+    this.itemService.getStockItemList(this.user_id).subscribe((data:Item[])  => {
+      this.item_list = data;
 
-    let page_count:number = Math.ceil(this.item_list.length / this.COUNT_PER_PAGE);
+      let page_count:number = Math.ceil(this.item_list.length / this.COUNT_PER_PAGE);
 
-    for (let i = 0; i < page_count; i++) {
-      this.page_list[i] = i + 1;
-    }
-
-    this.pageChange(1);
+      for (let i = 0; i < page_count; i++) {
+        this.page_list[i] = i + 1;
+      }
+      this.pageChange(1);
+    });
+   
   }
 
   public pageChange(cur_page:number) :any {
@@ -49,6 +52,13 @@ export class SellerItemListComponent implements OnInit {
     }
 
     return false;
-  } 
+  }
+
+//  public editItem(itemId:number) :any {
+  public editItem(itemId:number) :any {
+    sessionStorage.setItem('item_id', itemId + "");
+    this.router.navigateByUrl("/seller/sellerItemAdd");
+
+  }
 
 }

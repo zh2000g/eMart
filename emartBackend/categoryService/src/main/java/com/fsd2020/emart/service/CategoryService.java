@@ -34,7 +34,7 @@ public class CategoryService {
 	public List<Category> getCategoryList() {
 		
 		// parentCategoryId of Category is 0
-		List<Category> list = categoryRepository.findByParentCategoryId(0);
+		List<Category> list = categoryRepository.findAll();
 		
 		return list;
 	}

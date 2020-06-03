@@ -1,0 +1,26 @@
+server:
+   port: 8083
+   
+spring:
+   application:
+      name: item-service
+   datasource:
+      url: jdbc:mysql://localhost:7777/emartdb?autoRec&useSSL=false&allowPublicKeyRetrieval=true
+      username: root
+      password: fsd2020
+      driver-class-name: com.mysql.cj.jdbc.Driver
+
+   jpa:
+      database: MYSQL
+      show-sql: true
+      hibernate:
+         ddl-auto: update
+      properties:
+         hibernate:
+            dialect: org.hibernate.dialect.MySQL5Dialect
+                        
+eureka:
+  client:
+    serviceUrl: 
+      defaultZone: http://localhost:8091/eureka/
+

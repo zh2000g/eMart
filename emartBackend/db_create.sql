@@ -43,6 +43,8 @@ create table item (
   seller VARCHAR(30) not null,
   price DOUBLE  not null,
   remain_num INT(8) not null,
+  item_num INT(8) not null,
+  item_desc VARCHAR(255),
   image_url_1 VARCHAR(255),
   image_url_2 VARCHAR(255),
   image_url_3 VARCHAR(255),
@@ -86,6 +88,7 @@ insert into category values (4,"Note PC","Note PC SubCategory",1);
 insert into category values (5,"Tablelet","Tablelet SubCategory",1);
 insert into category values (6,"Pocket PC","Pocket PC SubCategory",1);
 insert into category values (7,"Noval","Noval SubCategory",2);
+insert into category values (8,"Wine","Wine Category",0);
 
 
 insert into seller values (1,"seller1","First seller","12345","Test Company",

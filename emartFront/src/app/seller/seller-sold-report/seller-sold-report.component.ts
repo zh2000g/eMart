@@ -12,7 +12,7 @@ export class SellerSoldReportComponent implements OnInit {
 
   COUNT_PER_PAGE:number = 5;
 
-  login_user_id:string;
+  user_id:string;
 
   item_list:Item[];
   cur_page_item_list:Item[] = [];
@@ -22,17 +22,20 @@ export class SellerSoldReportComponent implements OnInit {
   constructor(private itemService: ItemService) { }
 
   ngOnInit(): void {
-    this.login_user_id = sessionStorage.getItem("login_user_id");
+    
+    this.user_id = sessionStorage.getItem("login_user_id");
 
-    this.item_list = this.itemService.getStockItemList(this.login_user_id);
+    this.itemService.getStockItemList(this.user_id).subscribe((data:Item[])  => {
+      this.item_list = data;
+      let page_count:number = Math.ceil(this.item_list.length / this.COUNT_PER_PAGE);
 
-    let page_count:number = Math.ceil(this.item_list.length / this.COUNT_PER_PAGE);
+     for (let i = 0; i < page_count; i++) {
+        this.page_list[i] = i + 1;
+      }
 
-    for (let i = 0; i < page_count; i++) {
-      this.page_list[i] = i + 1;
-    }
+      this.pageChange(1);
+    });
 
-    this.pageChange(1);
   }
 
   public pageChange(cur_page:number) :any {

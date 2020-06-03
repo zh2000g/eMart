@@ -3,52 +3,54 @@
     <table border="0">
         <tr class="signuptr">
             <td class="item">User Id</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="user_id" [(ngModel)]="seller.userId"></td>
         </tr>
         <tr class="signuptr">
             <td>User Name</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="user_name" [(ngModel)]="seller.userName"></td>
         </tr>
         <tr class="signuptr">
             <td>Passworld</td>
-            <td><input type="password"></td>
+            <td><input type="password" name="password" [(ngModel)]="seller.password"></td>
         </tr>
         <tr class="signuptr">
             <td>Confirm Password</td>
-            <td><input type="password"></td>
+            <td><input type="password" name="confirmPassword" [(ngModel)]="confirmPassword"></td>
         </tr>
         <tr class="signuptr">
             <td>Company Name</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="company_name" [(ngModel)]="seller.companyName"></td>
         </tr>
         <tr class="signuptr">
             <td valign="top">Brief of Company</td>
-            <td><textarea name="" id="" cols="22" rows="3"></textarea></td>
+            <td>
+                <textarea cols="22" rows="3" name="brief_of_company" [(ngModel)]="seller.briefOfCompany"></textarea>
+            </td>
         </tr>
         <tr class="signuptr">
             <td>GSTIN</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="gstin" [(ngModel)]="seller.gstin"></td>
         </tr>
         <tr class="signuptr">
             <td>Post Address</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="post_address" [(ngModel)]="seller.postAddress"></td>
         </tr>
         <tr class="signuptr">
             <td>Website</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="website" [(ngModel)]="seller.website"></td>
         </tr>
         <tr class="signuptr">
             <td>Email</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="email" [(ngModel)]="seller.email"></td>
         </tr>
         <tr class="signuptr">
             <td>Contract Number</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="contract_number" [(ngModel)]="seller.contractNumber"></td>
         </tr>
         <tr class="signuptr">
             <td></td>
             <td>
-                <input type="button" name="submit" value="Sign Up" routerLink="/login" routerLinkActive="router-link-active">
+                <input type="button" name="submit" value="Sign Up" (click)="signUp()">
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="reset" name="reset" value="Reset">
             </td>

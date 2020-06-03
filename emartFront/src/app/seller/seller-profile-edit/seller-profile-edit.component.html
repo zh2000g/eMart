@@ -6,18 +6,18 @@
     </div>
     <div class="row">
         <div class="col-md-8 offset-2">
-            <input type="hidden" name="user_kind" value="1">
+            <input type="hidden" name="user_kind" value="2">
             <table border="0">
                 <tr class="edit">
                     <td class="item">User Id</td>
                     <td>
-                        <span>{{seller.user_id}}</span>
-                        <input type="hidden" name="user_id" [(ngModel)]="seller.user_id">
+                        <span>{{seller.userId}}</span>
+                        <input type="hidden" name="user_id" [(ngModel)]="seller.userId">
                     </td>
                 </tr>
                 <tr class="edit">
                     <td>User Name</td>
-                    <td><input type="text" name="user_name" [(ngModel)]="seller.user_name"></td>
+                    <td><input type="text" name="user_name" [(ngModel)]="seller.userName"></td>
                 </tr>
                 <tr class="edit">
                     <td>Password</td>
@@ -25,15 +25,15 @@
                 </tr>
                 <tr class="edit">
                     <td>Confirm Password</td>
-                    <td><input type="password" name="confirm_password" [(ngModel)]="seller.confirm_password"></td>
+                    <td><input type="password" name="confirm_password" [(ngModel)]="confirmPassword"></td>
                 </tr>
                 <tr class="edit">
                     <td>Company Name</td>
-                    <td><input type="text" name="company_name" [(ngModel)]="seller.company_name"></td>
+                    <td><input type="text" name="company_name" [(ngModel)]="seller.companyName"></td>
                 </tr>
                 <tr class="edit">
                     <td valign="top">Brief of Company</td>
-                    <td><textarea  name="brief_of_company" [(ngModel)]="seller.brief_of_company" cols="22" rows="3"></textarea></td>
+                    <td><textarea  name="brief_of_company" [(ngModel)]="seller.briefOfCompany" cols="22" rows="3"></textarea></td>
                 </tr>
                 <tr class="edit">
                     <td>GSTIN</td>
@@ -41,7 +41,7 @@
                 </tr>
                 <tr class="edit">
                     <td>Post Address</td>
-                    <td><input type="text" name="post_address" [(ngModel)]="seller.post_address"></td>
+                    <td><input type="text" name="post_address" [(ngModel)]="seller.postAddress"></td>
                 </tr>
                 <tr class="edit">
                     <td>Website</td>
@@ -53,12 +53,12 @@
                 </tr>
                 <tr class="edit">
                     <td>Contract Number</td>
-                    <td><input type="text" name="contract_number" [(ngModel)]="seller.contract_number"></td>
+                    <td><input type="text" name="contract_number" [(ngModel)]="seller.contractNumber"></td>
                 </tr>
                 <tr class="edit">
                     <td></td>
                     <td>
-                        <input type="button" name="submit" value="Edit Profile" routerLink="/seller">
+                        <input type="button" name="submit" value="Edit Profile"  (click)="profileEdit()">
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <input type="reset" name="reset" value="reset">
                     </td>

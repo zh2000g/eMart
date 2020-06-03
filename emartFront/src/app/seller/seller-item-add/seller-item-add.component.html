@@ -10,40 +10,37 @@
                 <tr class="item">
                     <td>Category</td>
                     <td>
-                        <select name="category" style="width:210px">
-                            <option value=""></option>
-                            <option value="1">Computer</option>
-                            <option id="2">Books</option>
-                            <option id="3">Clothes</option>
+                        <select name="category_id" style="width:210px" [(ngModel)]="item.categoryId" (ngModelChange)="catChange()">
+                            <option value="999"></option>
+                            <option *ngFor="let cat of category_list" [value]="cat.id">{{cat.categoryName}}</option>
                         </select>
                     </td>
                 </tr>
                 <tr class="item">
                     <td>SubCategory</td>
                     <td>
-                        <select name="subcategory" style="width:210px">
-                            <option value=""></option>
-                            <option value="1">Note PC</option>
-                            <option id="2">Tablet</option>
+                        <select name="subcategory_id" style="width:210px" [(ngModel)]="item.subCategoryId">
+                            <option value="999"></option>
+                            <option *ngFor="let cat of subcategory_list" [value]="cat.id">{{cat.categoryName}}</option>
                         </select>
                     </td>
                 </tr>
                 <tr class="item">
                     <td width="150">Item Name</td>
-                    <td><input type="text" name="item_name"></td>
+                    <td><input type="text" name="item_name" [(ngModel)]="item.itemName"></td>
                 </tr>
                 <tr class="item">
                     <td>Price</td>
-                    <td><input type="text" name="price"></td>
+                    <td><input type="text" name="price" [(ngModel)]="item.price"></td>
                 </tr>
                 <tr class="item">
                     <td>Remainning</td>
-                    <td><input type="text" name="remainning"></td>
+                    <td><input type="text" name="remain_num" [(ngModel)]="item.remainNum"></td>
                 </tr>
                 <tr class="item">
                     <td valign="top">Item Description</td>
                     <td>
-                        <textarea name="item_desc" id="" cols="22" rows="5"></textarea>
+                        <textarea name="item_desc" cols="22" rows="5" [(ngModel)]="item.itemDesc"></textarea>
                     </td>
                 </tr>
                 <tr class="item">
@@ -72,7 +69,7 @@
     <br>
     <div class="row">
         <div class="col-md-2 offset-3" align="right">
-            <input type="button" name="submit" value="Add Item" routerLink="/seller/sellerItemList">
+            <input type="button" name="submit" value="Add Item" (click)="addItem()">
         </div>
         <div class="col-md-1">
             <input type="reset" name="reset" value="Reset">

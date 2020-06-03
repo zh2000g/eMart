@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router} from '@angular/router';
+
 import { Seller } from '../../class/seller';
-import { SellerService } from '../../service/seller.service';
+import { UserService } from '../../service/user.service';
 
 @Component({
   selector: 'app-seller-profile-edit',
@@ -11,10 +13,40 @@ export class SellerProfileEditComponent implements OnInit {
 
   seller:Seller;
 
-  constructor(private sellerService: SellerService) { }
+  confirmPassword:string;
+
+  userId:string;
+
+  constructor(private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
-    this.seller = this.sellerService.getSellerInfo("user007");
+
+    this.userId = sessionStorage.getItem('login_user_id')
+
+    this.userService.getSeller(this.userId).subscribe((data:Seller)  => {
+      this.seller = data;
+    });
+  }
+
+  public profileEdit() {
+
+    if(this.seller.password == this.confirmPassword) {
+      
+      this.userService.sellerSave(this.seller).subscribe( (data:boolean)  => {
+        var returnRev = data;
+
+        // Seller Save OK
+        if(returnRev){
+          alert("Profile Edit OK.");
+            this.router.navigateByUrl("/seller")
+        } else {
+          alert("Profile Edit Falure. \n Please input currect!");
+        }
+      });
+
+    } else {
+      alert("Password not match");
+    }
   }
 
 }

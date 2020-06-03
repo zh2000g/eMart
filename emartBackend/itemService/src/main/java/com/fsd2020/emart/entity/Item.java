@@ -13,6 +13,11 @@ import javax.persistence.Table;
 @Table(name = "item")
 public class Item implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
@@ -34,8 +39,11 @@ public class Item implements Serializable {
 
     @Column(name = "remain_num")
 	private int remainNum;
+    
+    @Column(name = "item_desc")
+	private String itemDesc;
 
-    @Column(name = "image_url_1")
+	@Column(name = "image_url_1")
 	private String imageUrl1;
 
     @Column(name = "image_url_2")
@@ -199,6 +207,20 @@ public class Item implements Serializable {
 	 */
 	public void setImageUrl4(String imageUrl4) {
 		this.imageUrl4 = imageUrl4;
+	}
+	
+    /**
+	 * @return the remainDesc
+	 */
+	public String getItemDesc() {
+		return itemDesc;
+	}
+
+	/**
+	 * @param remainDesc the remainDesc to set
+	 */
+	public void setItemDesc(String itemDesc) {
+		this.itemDesc = itemDesc;
 	}
 
 	/*

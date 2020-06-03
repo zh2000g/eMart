@@ -32,30 +32,28 @@
             <table border="0" width="600">
                 <tr>
                     <td width="150">Item Name</td>
-                    <td>Thinkpad</td>
+                    <td>{{item.itemName}}</td>
                 </tr>
                 <tr>
                     <td>Category</td>
-                    <td>Computer</td>
+                    <td>{{categoryName}}</td>
                 </tr>
                 <tr>
                     <td>SubCategory</td>
-                    <td>Note PC</td>
+                    <td>{{subcategoryName}}</td>
                 </tr>
                 <tr>
                     <td>Price</td>
-                    <td>$4,999</td>
+                    <td>{{item.price}}</td>
                 </tr>
                 <tr>
                     <td>Remainning</td>
-                    <td>100</td>
+                    <td>{{item.remainNum}}</td>
                 </tr>
                 <tr>
                     <td valign="top">Item Description</td>
                     <td>
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
-                        XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX<br>
+                        {{item.itemDesc}}
                     </td>
                 </tr>
                 <tr>

@@ -28,15 +28,15 @@
     </div>
     <div class="row">
         <div class="col-md-5 offset-5">
-            <input type="text" name="keyword" class="searchbox"> &ngsp;&ngsp;
-            <input type="button" value="Search" (click)=search()>
+            <input type="text" name="search_name" class="searchbox" [(ngModel)]="search_name"> &ngsp;&ngsp;
+            <input type="button" name="search" value="Search" (click)=search()>
         </div>
     </div>
     <div class="row">
         <div class="col-md-3 offset-9" align="center">
           <p>
             Sort By &nbsp;&nbsp;
-            [<a routerLink="/searchList">Seller</a>] &nbsp;
+            [<a routerLink="/searchList" router>Seller</a>] &nbsp;
             [<a routerLink="/searchList">Price</a>]
           </p>
         </div>
@@ -56,13 +56,14 @@
             <tbody>
                 <tr *ngFor="let item of cur_page_item_list;let lx=index">
                     <td align="center">
-                        <a routerLink="/itemDetail">
+                        <a href="#" (click)="buyItem(item.id)">
                             <img src="{{item.image_url_1}}" class="image">
+                            {{item.itemName}}
                         </a>
                     </td>
-                    <td>{{item.item_name}}</td>
-                    <td>{{item.category}}</td>
-                    <td>{{item.sub_category}}</td>
+                    <td>{{item.itemName}}</td>
+                    <td>{{item.categoryId}}</td>
+                    <td>{{item.subCategoryId}}</td>
                     <td>{{item.seller}}</td>
                     <td align="right">{{item.price}}</td>
                 </tr>

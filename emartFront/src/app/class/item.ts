@@ -1,18 +1,16 @@
 export class Item {
-    item_id: String;
-    item_name: string;
-    category:string;
-    sub_category:string;
+    id: number;
+    itemName: string;
+    categoryId:number;
+    subCategoryId:number;
     seller:string;
-    buyer:string;
     price:number;
-    current_num:number;
-    remain_num:number;
-    purchase_time:string;
-    image_url_1:string;
-    image_url_2:string;
-    image_url_3:string;
-    image_url_4:string;
+    remainNum:number;
+    itemDesc:string;
+    imageUrl1:string;
+    imageUrl2:string;
+    imageUrl3:string;
+    imageUrl4:string;
 
     constructor() { }
 }

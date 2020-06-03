@@ -3,32 +3,32 @@
     <table border="0">
         <tr class="signuptr">
             <td class="item">User Id</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="user_id" [(ngModel)]="buyer.userId"></td>
         </tr>
         <tr class="signuptr">
             <td>User Name</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="user_name" [(ngModel)]="buyer.userName"></td>
         </tr>
         <tr class="signuptr">
             <td>Email</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="email" [(ngModel)]="buyer.email"></td>
         </tr>
         <tr class="signuptr">
             <td>Mobile Number</td>
-            <td><input type="text"></td>
+            <td><input type="text" name="mobile_number" [(ngModel)]="buyer.mobileNumber"></td>
         </tr>
         <tr class="signuptr">
             <td>Passworld</td>
-            <td><input type="password"></td>
+            <td><input type="password" name="password" [(ngModel)]="buyer.password"></td>
         </tr>
         <tr class="signuptr">
             <td>Confirm Password</td>
-            <td><input type="password"></td>
+            <td><input type="password" name="confirmPassword" [(ngModel)]="confirmPassword"></td>
         </tr>
         <tr class="signuptr">
             <td></td>
             <td>
-                <input type="button" name="submit" value="Sign Up" routerLink="/login" routerLinkActive="router-link-active" >
+                <input type="button" name="submit" value="Sign Up" (click)="signUp()" >
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="reset" name="reset" value="Reset"></td>
         </tr>

@@ -1,0 +1,38 @@
+server:
+  port: 8050
+ 
+spring:
+  application:
+    name: service-zuul
+
+eureka:
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    registry-fetch-interval-seconds: 15
+    serviceUrl: 
+      defaultZone: http://localhost:8091/eureka/
+
+zuul:
+  routes:
+    user-service:
+      path: /user/**
+      service-id: user-service
+      strip-prefix: false
+    cart-service:
+      path: /cart/**
+      service-id: cart-service
+      strip-prefix: false
+    category-service:
+      path: /categ/**
+      service-id: category-service
+      strip-prefix: false
+    deal-service:
+      path: /deal/**
+      service-id: deal-service
+      strip-prefix: false
+    item-service:
+      path: /item/**
+      service-id: item-service
+      strip-prefix: false
+

@@ -1,5 +1,6 @@
 package com.fsd2020.emart.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +16,14 @@ public class ItemService {
 	ItemRepository itemRepository;
 
 	/**
-	 * Get Item Name
-	 * @param itemId Item ID
+	 * Get Item Object
+	 * @param id Item ID
 	 * @return Item
 	 */
-	public Item getItem(int itemId) {
-		
-		return itemRepository.getOne(itemId);
+	public Item getItem(int id) {
+
+		return itemRepository.findById(id)
+				.orElse(new Item());
 	}
 	
 	/**
@@ -29,9 +31,9 @@ public class ItemService {
 	 * @param seller
 	 * @return Item List
 	 */
-	public List<Item> getItemListBySeller(String seller) {
+	public List<Item> getItemListBySeller(String sellerId) {
 		
-		List<Item> list = itemRepository.findBySeller(seller);
+		List<Item> list = itemRepository.findBySeller(sellerId);
 		
 		return list;
 	}
@@ -47,6 +49,34 @@ public class ItemService {
 		List<Item> list = itemRepository.findByCategoryIdAndSubCategoryId(categoryId, subCategoryId);
 		
 		return list;
+	}
+	
+	/**
+	 * get Item List of SubCategory
+	 * @param categoryId Category ID
+	 * @param subCategoryId SubCategory ID
+	 * @return Item List
+	 */
+	public List<Item> getItemListByName(String itemName) {
+			
+		List<Object[]> list = itemRepository.findByItemNameLike(itemName);
+		List<Item> returnList = new ArrayList<Item>();
+		
+		for (Object[] objects : list) {
+			Item item = new Item();
+			item.setId((int)objects[0]);
+			item.setItemName((String)objects[1]);
+			item.setCategoryId((int)objects[2]);
+			item.setSubCategoryId((int)objects[3]);
+			item.setSeller((String)objects[4]);
+			item.setPrice((double)objects[5]);
+			item.setRemainNum((int)objects[6]);
+			item.setItemDesc((String)objects[7]);
+			
+			returnList.add(item);
+		}
+		
+		return returnList;
 	}
 	
 	/**
