@@ -40,7 +40,7 @@ export class SearchListComponent implements OnInit {
   }
 
   public search():void {
-alert("search");
+
     this.itemService.getItemListByName(this.search_name).subscribe((data:Item[])  => {
       this.item_list = data;
 

@@ -44,22 +44,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let item of cur_page_item_list;let lx=index">
+                <tr *ngFor="let cart_item of cur_page_cart_item_list;let lx=index">
                     <td align="center">
                         <a routerLink="/itemDetail">
-                            <img src="{{item.image_url_1}}" class="image">
+                            <img src="{{cart_item.imageUrl1}}" class="image">
                         </a>
                     </td>
-                    <td>{{item.item_name}}</td>
-                    <td>{{item.category}}</td>
-                    <td>{{item.sub_category}}</td>
-                    <td>{{item.seller}}</td>
-                    <td align="right">{{item.price}}</td>
-                    <td align="right">{{item.current_num}}</td>
-                    <td>{{item.purchase_time}}</td>
+                    <td>{{cart_item.item_name}}</td>
+                    <td>{{cart_item.categoryId}}</td>
+                    <td>{{cart_item.subCategoryId}}</td>
+                    <td>{{cart_item.seller}}</td>
+                    <td align="right">{{cart_item.price}}</td>
+                    <td align="right">{{cart_item.addNum}}</td>
+                    <td>{{cart_item.addTime}}</td>
                     <td align="center">
-                        <input type="button" name="edit" value="Edit" class="edit" routerLink="/itemDetail"> &nbsp;
-                        <input type="button" name="delete" value="Delete" class="delete"> &nbsp;
+                        <input type="button" name="edit" value="Edit" class="edit" routerLink="/itemDetail" (click)="buyItem(cart_item.itemId)"> &nbsp;
+                        <input type="button" name="delete" value="Delete" class="delete" (click)="delCartItem(cart_item.id)"> &nbsp;
                     </td>
                 </tr>
             </tbody>

@@ -65,4 +65,9 @@ public class ItemServiceControler {
 	public boolean addItem(@RequestBody Item item) {
 		return itemService.addItem(item);
 	}
+	
+	@RequestMapping("/delItem")
+	public boolean delItem(int id) {
+		return itemService.delItem(id);
+	}
 }

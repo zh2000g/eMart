@@ -14,12 +14,17 @@ import javax.persistence.Table;
 @Table(name = "cart")
 public class CartItem implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
     
     @Column(name = "item_id")
-	private String itemId;
+	private int itemId;
     
     @Column(name = "item_name")
 	private String itemName;
@@ -62,14 +67,14 @@ public class CartItem implements Serializable {
 	/**
 	 * @return the itemId
 	 */
-	public String getItemId() {
+	public int getItemId() {
 		return itemId;
 	}
 
 	/**
 	 * @param itemId the itemId to set
 	 */
-	public void setItemId(String itemId) {
+	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
 

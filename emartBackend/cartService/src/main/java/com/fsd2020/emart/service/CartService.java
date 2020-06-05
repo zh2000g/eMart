@@ -31,12 +31,23 @@ public class CartService {
 	 * @param cartItem
 	 * @return true:success false:failure
 	 */
-	public boolean addItem(CartItem cartItem) {
+	public boolean addCartItem(CartItem cartItem) {
 		if(cartRepository.save(cartItem) !=null) {
 			return true;
 		} else {
 			return false;
 		}
+	}
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public boolean delCartItem(int id) {
+		cartRepository.deleteById(id);
+		
+		return true;
 	}
 	
 

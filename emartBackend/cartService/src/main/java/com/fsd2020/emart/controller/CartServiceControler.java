@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,12 +20,18 @@ public class CartServiceControler {
 	CartService cartService;
 	
 	@RequestMapping("/getCartItemListByBuyer")
-	public List<CartItem> getCartItemListByBuyer(String buyer) {
-		return cartService.getCartItemListByBuyer(buyer);
+	public CartItem[] getCartItemListByBuyer(String buyer) {
+		List<CartItem> list = cartService.getCartItemListByBuyer(buyer);
+		return list.toArray(new CartItem[list.size()]);
 	}
 	
-	@RequestMapping("/addCartItem")
-	public void addItem(CartItem cartItem) {
-		cartService.addItem(cartItem);
+	@PostMapping("/addCartItem")
+	public boolean addCartItem(@RequestBody CartItem cartItem) {
+		return cartService.addCartItem(cartItem);
+	}
+	
+	@RequestMapping("/delCartItem")
+	public boolean delCartItem(int id) {
+		return cartService.delCartItem(id);
 	}
 }

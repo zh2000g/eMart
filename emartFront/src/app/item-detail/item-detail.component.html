@@ -59,7 +59,7 @@
                 <tr>
                     <td>Buy Number</td>
                     <td>
-                        <input type="number"  min="0" max="100" style="width:50px"/>
+                        <input type="buyNumber"  min="0" max="100" style="width:50px"/>
                     </td>
                 </tr>
             </table>
@@ -67,7 +67,7 @@
     </div>
     <div class="row">
         <div class="col-md-2 offset-9" align="center">
-            <input type="button" name="submit" value="Add to Cart">
+            <input type="button" name="submit" value="Add to Cart" (click)="addToCart(item.id)">
         </div>
         <div class="col-md-1">
             <input type="button" name="submit" value="Return" onclick="history.back()">

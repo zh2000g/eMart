@@ -91,5 +91,16 @@ public class ItemService {
 			return false;
 		}
 	}
+	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
+	public boolean delItem(int id) {
+		itemRepository.deleteById(id);
+		
+		return true;
+	}
 
 }
