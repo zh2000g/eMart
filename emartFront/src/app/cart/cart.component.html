@@ -21,10 +21,7 @@
     <div class="row">
         <div class="col-md-4 offset-8" align="center">
             <p>
-                Sort By &nbsp;&nbsp;
-                [<a routerLink="/history">Seller</a>] &nbsp;
-                [<a routerLink="/history">Price</a>] &nbsp;
-                [<a routerLink="/history">Purchase Time</a>]
+                 &nbsp;&nbsp;
             </p>
         </div>
     </div>
@@ -50,15 +47,15 @@
                             <img src="{{cart_item.imageUrl1}}" class="image">
                         </a>
                     </td>
-                    <td>{{cart_item.item_name}}</td>
+                    <td>{{cart_item.itemName}}</td>
                     <td>{{cart_item.categoryId}}</td>
                     <td>{{cart_item.subCategoryId}}</td>
                     <td>{{cart_item.seller}}</td>
-                    <td align="right">{{cart_item.price}}</td>
+                    <td align="right">${{cart_item.price}}</td>
                     <td align="right">{{cart_item.addNum}}</td>
                     <td>{{cart_item.addTime}}</td>
                     <td align="center">
-                        <input type="button" name="edit" value="Edit" class="edit" routerLink="/itemDetail" (click)="buyItem(cart_item.itemId)"> &nbsp;
+                        <input type="button" name="edit" value="Edit" class="edit" (click)="buyItem(cart_item.itemId)"> &nbsp;
                         <input type="button" name="delete" value="Delete" class="delete" (click)="delCartItem(cart_item.id)"> &nbsp;
                     </td>
                 </tr>
@@ -80,10 +77,10 @@
     </div>
     <div class="row">
         <div class="col-md-2 offset-8">
-            Total Price:$15,789
+            &nbsp;&nbsp;
         </div>
         <div class="col-md-2">
-            <input type="button" name="payment" value="Go To Payment" routerLink="/payment" >
+            <input type="button" name="payment" value="Go To Payment" (click)="payment()" >
         </div>
     </div>
 </div>

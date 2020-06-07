@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 
 import { Seller } from '../class/seller';
@@ -13,9 +13,8 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   // User Login
-  public login(user_kind:string, user_id:string, password:string): Observable<boolean> {
+  public login(user_kind:string, user_id:string, password:string): Observable<HttpResponse<Object>> {
 
-    var returnRev:boolean = false;
     var url:string = "http://localhost:8050/user/login?userKind=" + 
             user_kind + 
             "&userId=" +
@@ -23,7 +22,7 @@ export class UserService {
             "&password=" +
             password;
 
-    return this.http.get<boolean>(url);
+    return this.http.get(url, { observe: 'response' });
   }
 
   // Buyer Sign Up

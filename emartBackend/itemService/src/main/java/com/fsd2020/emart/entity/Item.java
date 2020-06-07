@@ -210,14 +210,14 @@ public class Item implements Serializable {
 	}
 	
     /**
-	 * @return the remainDesc
+	 * @return the itemDesc
 	 */
 	public String getItemDesc() {
 		return itemDesc;
 	}
 
 	/**
-	 * @param remainDesc the remainDesc to set
+	 * @param itemDesc the itemDesc to set
 	 */
 	public void setItemDesc(String itemDesc) {
 		this.itemDesc = itemDesc;

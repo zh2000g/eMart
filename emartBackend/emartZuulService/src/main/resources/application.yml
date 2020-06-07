@@ -12,8 +12,25 @@ eureka:
     registry-fetch-interval-seconds: 15
     serviceUrl: 
       defaultZone: http://localhost:8091/eureka/
+      
+##jwt
+Audience:
+  clientId: client
+  # 密钥, 经过Base64加密, 可自行替换
+  base64Secret: fsd2020
+  # JWT的签发主体，存入issuer
+  name: FSD2020
+  # 过期时间，时间戳
+  expiresSecond: 172800
+
+ribbon:  
+  ReadTimeout: 6000
+  ConnectTimeout: 6000
 
 zuul:
+  host:
+    connect-timeout-millis: 6000
+    socket-timeout-millis: 6000
   routes:
     user-service:
       path: /user/**

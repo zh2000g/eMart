@@ -23,7 +23,7 @@ export class HistoryComponent implements OnInit {
 
     this.login_user_id = sessionStorage.getItem("login_user_id");
 
-    this.itemService.getDealList(this.login_user_id).subscribe((data:Deal[])  => {
+    this.itemService.getDealListByBuyer(this.login_user_id).subscribe((data:Deal[])  => {
       this.deal_list = data;
 
       let page_count:number = Math.ceil(this.deal_list.length / this.COUNT_PER_PAGE);

@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-4 offset-8" align="center">
             <p>
-                <input type="button" name="itemAdd" value="Add Item" routerLink="/seller/sellerItemAdd">
+                <input type="button" name="itemAdd" value="Add Item" (click)="addItem()">
             </p>
         </div>
     </div>
@@ -26,7 +26,7 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let item of cur_page_item_list;let lx=index">
-                        <td>{{item.itemName}} -- {{item.id}}</td>
+                        <td>{{item.itemName}}</td>
                         <td>{{item.categoryId}}</td>
                         <td>{{item.subCategoryId}}</td>
                         <td align="right">{{item.remainNum}}</td>

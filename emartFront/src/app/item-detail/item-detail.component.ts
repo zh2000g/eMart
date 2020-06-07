@@ -28,7 +28,6 @@ export class ItemDetailComponent implements OnInit {
     this.userId = sessionStorage.getItem('login_user_id');
 
     var id = sessionStorage.getItem('item_id');
-    alert(id);
 
     if(id != null) {
       this.itemService.getItem(id).subscribe((data:Item) =>{
@@ -63,8 +62,8 @@ export class ItemDetailComponent implements OnInit {
 
       // Seller Save OK
       if(returnRev){
-          alert("Add Item OK.");
-          this.router.navigateByUrl("/selsearchList")
+          alert("Add Cart Item OK.");
+          this.router.navigateByUrl("/searchList")
       } else {
         alert("Add CartItem Falure. \n Please try again!");
       }

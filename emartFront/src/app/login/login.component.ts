@@ -3,6 +3,7 @@ import {NgForm} from '@angular/forms';
 import { Router} from '@angular/router';
 
 import { UserService } from '../service/user.service';
+import { HttpResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
@@ -23,12 +24,15 @@ export class LoginComponent implements OnInit {
   // User Login
   public login() {
 
-    this.userService.login(this.user_kind, this.user_id, this.password).subscribe( (data:boolean)  => {
-      var returnRev:boolean = data;
+    this.userService.login(this.user_kind, this.user_id, this.password).subscribe( res => {
+      const keys = res.headers.keys();
+
+      var returnRev = res.body;
 
       // Login OK
       if(returnRev){
         sessionStorage.setItem('login_user_id',this.user_id);
+        sessionStorage.setItem('token',"token");
 
         if(this.user_kind == "1") {
           this.router.navigateByUrl("/searchList")

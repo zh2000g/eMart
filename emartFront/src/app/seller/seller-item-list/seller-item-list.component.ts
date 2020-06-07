@@ -24,8 +24,8 @@ export class SellerItemListComponent implements OnInit {
   ngOnInit(): void {
     this.user_id = sessionStorage.getItem("login_user_id");
 
-    this.itemService.getStockItemList(this.user_id).subscribe((data:Item[])  => {
-      this.item_list = data;
+    this.itemService.getStockItemList(this.user_id).subscribe((data:any)  => {
+      this.item_list = data
 
       let page_count:number = Math.ceil(this.item_list.length / this.COUNT_PER_PAGE);
 
@@ -57,6 +57,13 @@ export class SellerItemListComponent implements OnInit {
 //  public editItem(itemId:number) :any {
   public editItem(itemId:number) :any {
     sessionStorage.setItem('item_id', itemId + "");
+    this.router.navigateByUrl("/seller/sellerItemAdd");
+
+  }
+
+  //  public editItem(itemId:number) :any {
+  public addItem() :any {
+    sessionStorage.setItem('item_id', "");
     this.router.navigateByUrl("/seller/sellerItemAdd");
 
   }

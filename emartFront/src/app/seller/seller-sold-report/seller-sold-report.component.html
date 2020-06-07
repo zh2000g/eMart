@@ -7,10 +7,7 @@
     <div class="row">
         <div class="col-md-4 offset-8" align="center">
             <p>
-                Sort By &nbsp;&nbsp;
-                [<a routerLink="/seller/sellerSoldReport">Seller</a>] &nbsp;
-                [<a routerLink="/seller/sellerSoldReport">Price</a>] &nbsp;
-                [<a routerLink="/seller/sellerSoldReport">Purchase Time</a>]
+                &nbsp;&nbsp;
             </p>
         </div>
     </div>
@@ -29,62 +26,15 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let item of cur_page_item_list;let lx=index">
-                        <td>{{item.item_name}}</td>
-                        <td>{{item.category}}</td>
-                        <td>{{item.sub_category}}</td>
-                        <td>{{item.buyer}}</td>
-                        <td align="right">{{item.price}}</td>
-                        <td align="right">{{item.current_num}}</td>
-                        <td align="right">{{item.purchase_time}}</td>
+                    <tr *ngFor="let deal of cur_page_deal_list;let lx=index">
+                        <td>{{deal.itemName}}</td>
+                        <td>{{deal.categoryId}}</td>
+                        <td>{{deal.subCategoryId}}</td>
+                        <td>{{deal.buyer}}</td>
+                        <td align="right">{{deal.price}}</td>
+                        <td align="right">{{deal.purchaseNum}}</td>
+                        <td align="right">{{deal.purchaseTime}}</td>
                     </tr>
-                    <!--
-                    <tr>
-                        <td>Thinkpad</td>
-                        <td>Computer</td>
-                        <td>Note PC</td>
-                        <td>John</td>
-                        <td align="right">$4,999</td>
-                        <td align="right">1</td>
-                        <td align="right">4th Mon 2019</td>
-                    </tr>
-                    <tr>
-                        <td>Thinkpad</td>
-                        <td>Computer</td>
-                        <td>Note PC</td>
-                        <td>John</td>
-                        <td align="right">$4,999</td>
-                        <td align="right">1</td>
-                        <td align="right">4th Mon 2019</td>
-                    </tr>
-                    <tr>
-                        <td>Thinkpad</td>
-                        <td>Computer</td>
-                        <td>Note PC</td>
-                        <td>John</td>
-                        <td align="right">$4,999</td>
-                        <td align="right">1</td>
-                        <td align="right">4th Mon 2019</td>
-                    </tr>
-                    <tr>
-                        <td>Thinkpad</td>
-                        <td>Computer</td>
-                        <td>Note PC</td>
-                        <td>John</td>
-                        <td align="right">$4,999</td>
-                        <td align="right">1</td>
-                        <td align="right">4th Mon 2019</td>
-                    </tr>
-                    <tr>
-                        <td>Thinkpad</td>
-                        <td>Computer</td>
-                        <td>Note PC</td>
-                        <td>John</td>
-                        <td align="right">$4,999</td>
-                        <td align="right">1</td>
-                        <td align="right">4th Mon 2019</td>
-                    </tr>
-                    -->
                 </tbody>
             </table>
         </div>

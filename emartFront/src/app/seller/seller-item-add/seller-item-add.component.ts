@@ -29,23 +29,24 @@ export class SellerItemAddComponent implements OnInit {
 
     var id = sessionStorage.getItem('item_id');
 
-    alert(id);
-    if(id != null) {
-      alert("333");
-      this.itemService.getItem(id).subscribe((data:Item) =>{
-        alert("444");
-        this.item = data;
-      });
-    } else {
-      this.item = new Item();
-    }
-
-    this.item.seller = this.userId;
-
     this.categoryService.getALLCategory().subscribe((data:Category[])  => {
       this.categoryService.category_list = data;
       this.category_list = this.categoryService.getCategoryList(0);
+
+      if(id != "") {
+        this.itemService.getItem(id).subscribe((data:Item) =>{
+          this.item = data;
+          
+        this.subcategory_list = this.categoryService.getCategoryList(this.item.categoryId);
+  
+          this.item.seller = this.userId;
+        });
+      } else {
+        this.item = new Item();
+      }
+
     });
+
   }
 
   public addItem() {

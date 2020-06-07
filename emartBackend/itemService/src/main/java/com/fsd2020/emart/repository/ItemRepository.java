@@ -16,6 +16,6 @@ public interface ItemRepository extends JpaRepository<Item, Integer>{
     
     List<Item> findByCategoryIdAndSubCategoryId(int categoryId, int subCategoryId);
     
-    @Query(value = "select id,itemName,categoryId,subCategoryId,seller,price,remainNum,remainDesc from Item where itemName like CONCAT('%',:itemName,'%')")
+    @Query(value = "select id,itemName,categoryId,subCategoryId,seller,price,remainNum,itemDesc from Item where itemName like CONCAT('%',:itemName,'%')")
     List<Object[]> findByItemNameLike(@Param("itemName") String itemName);
 }

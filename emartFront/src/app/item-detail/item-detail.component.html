@@ -21,12 +21,15 @@
     <p align="center"><b>Item Detail</b></p>
     <div class="row">
         <div class="col-md-2 offset-2" align="center">
+            &nbsp;
+            <!--
             <img src="../../assets/images/thinkpad.jpg" class="image">
             <br>
             <a routerLink="/itemDetail">1</a> &ngsp;
             <a routerLink="/itemDetail">2</a> &ngsp;
             <a routerLink="/itemDetail">3</a> &ngsp;
             <a routerLink="/itemDetail">4</a> &ngsp;
+            -->
         </div>
         <div class="col-md-6">
             <table border="0" width="600">
@@ -59,7 +62,7 @@
                 <tr>
                     <td>Buy Number</td>
                     <td>
-                        <input type="buyNumber"  min="0" max="100" style="width:50px"/>
+                        <input type="text" name="addNum"  min="0" max="100" style="width:50px" [(ngModel)]="addNum"/>
                     </td>
                 </tr>
             </table>
@@ -67,7 +70,7 @@
     </div>
     <div class="row">
         <div class="col-md-2 offset-9" align="center">
-            <input type="button" name="submit" value="Add to Cart" (click)="addToCart(item.id)">
+            <input type="button" name="submit" value="Add to Cart" (click)="addToCart()">
         </div>
         <div class="col-md-1">
             <input type="button" name="submit" value="Return" onclick="history.back()">

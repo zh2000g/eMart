@@ -21,10 +21,7 @@
     <div class="row">
         <div class="col-md-4 offset-8" align="center">
             <p>
-                Sort By &nbsp;&nbsp;
-                [<a routerLink="/history">Seller</a>] &nbsp;
-                [<a routerLink="/history">Price</a>] &nbsp;
-                [<a routerLink="/history">Purchase Time</a>]
+                &nbsp;&nbsp;
             </p>
         </div>
     </div>
@@ -46,12 +43,12 @@
                 <tr *ngFor="let deal of cur_page_deal_list;let lx=index">
                     <td align="center">
                         <a routerLink="/itemDetail">
-                            <img src="{{deal.image_url_1}}" class="image">
+                            <img src="{{deal.imageUrl1}}" class="image">
                         </a>
                     </td>
                     <td>{{deal.itemName}}</td>
                     <td>{{deal.categoryId}}</td>
-                    <td>{{deal.subCcategoryId}}</td>
+                    <td>{{deal.subCategoryId}}</td>
                     <td>{{deal.seller}}</td>
                     <td align="right">{{deal.price}}</td>
                     <td align="right">{{deal.purchaseNum}}</td>

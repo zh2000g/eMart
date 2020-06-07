@@ -6,6 +6,7 @@ import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
 
 import com.fsd2020.emart.filter.EmartFilter;
+import com.fsd2020.emart.filter.LoginFilter;
 
 @SpringBootApplication
 @EnableZuulProxy
@@ -18,6 +19,11 @@ public class EmartZuulServiceApplication {
 	@Bean
 	public EmartFilter emartFilter() {
 		return new EmartFilter();
+	}
+	
+	@Bean
+	public LoginFilter loginFilter() {
+		return new LoginFilter();
 	}
 
 }
