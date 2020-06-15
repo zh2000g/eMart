@@ -1,0 +1,36 @@
+pipeline {
+   agent any
+
+   stages {
+      stage('pull emart code') {
+         steps {
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/zh2000g/eMart.git']]])
+         }
+      }
+      stage('build emart project') {
+         steps {
+            dir('emartBackend/cartService') {
+                sh 'mvn clean package'
+            }
+            dir('emartBackend/categoryService') {
+                sh 'mvn clean package'
+            }
+            dir('emartBackend/dealService') {
+                sh 'mvn clean package'
+            }
+            dir('emartBackend/emartEurekaService') {
+                sh 'mvn clean package'
+            }
+            dir('emartBackend/emartZuulService') {
+                sh 'mvn clean package'
+            }
+            dir('emartBackend/itemZuulService') {
+                sh 'mvn clean package'
+            }
+            dir('emartBackend/userService') {
+                sh 'mvn clean package'
+            }
+         }
+      }
+   }
+}
